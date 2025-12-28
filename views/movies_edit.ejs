@@ -1,0 +1,17 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><title><%= data.title %>の編集</title></head>
+<body>
+  <h2>映画情報の編集</h2>
+  <form action="/movies/update/<%= id %>" method="POST">
+    <table>
+      <tr><td>タイトル</td><td><input type="text" name="title" value="<%= data.title %>"></td></tr>
+      <tr><td>監督</td><td><input type="text" name="director" value="<%= data.director %>"></td></tr>
+      <tr><td>公開年</td><td><input type="text" name="year" value="<%= data.year %>"></td></tr>
+      <tr><td>評価</td><td><input type="text" name="rating" value="<%= data.rating %>"></td></tr>
+    </table>
+    <input type="submit" value="更新保存">
+  </form>
+  <a href="/movies/">一覧に戻る</a>
+</body>
+</html>

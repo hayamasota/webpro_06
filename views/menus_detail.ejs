@@ -1,0 +1,15 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><title><%= data.name %></title></head>
+<body>
+  <h2><%= data.name %>の詳細</h2>
+  <table border="1">
+    <tr><td>商品名</td><td><%= data.name %></td></tr>
+    <tr><td>カテゴリ</td><td><%= data.category %></td></tr>
+    <tr><td>価格</td><td><%= data.price %> 円</td></tr>
+    <tr><td>カロリー</td><td><%= data.calorie %> kcal</td></tr>
+  </table>
+  <br>
+  <a href="/menus/edit/<%= id %>">編集する</a> | <a href="/menus">一覧に戻る</a>
+</body>
+</html>

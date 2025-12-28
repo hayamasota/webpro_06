@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>削除の確認 - <%= data.title %></title>
+</head>
+<body>
+  <h2>以下の本を削除しますか？</h2>
+  
+  <table border="1">
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>タイトル</td><td><%= data.title %></td></tr>
+    <tr><td>著者</td><td><%= data.author %></td></tr>
+  </table>
+
+  <p style="color: red; font-weight: bold;">
+    ※この操作は取り消せません。
+  </p>
+
+  <form action="/books/delete/<%= id %>" method="GET" style="display: inline;">
+    <input type="submit" value="はい、削除します" style="background-color: #ffcccc; color: red; cursor: pointer;">
+  </form>
+  
+  <a href="/books">キャンセルして一覧に戻る</a>
+
+</body>
+</html>

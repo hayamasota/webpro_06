@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><title>カフェメニュー</title></head>
+<body>
+  <h2>メニュー一覧</h2>
+  <table border="1">
+    <tr><th>ID</th><th>商品名</th><th>カテゴリ</th><th>操作</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><a href="/menus/<%= number %>"><%= row.name %></a></td>
+          <td><%= row.category %></td>
+          <td>
+            <a href="/menus/edit/<%= number %>">編集</a> | 
+            <a href="/menus/confirm_delete/<%= number %>">削除</a>
+          </td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br><a href="/menus/create">新メニュー登録</a>
+</body>
+</html>

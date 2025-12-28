@@ -1,0 +1,15 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><title>削除確認</title></head>
+<body>
+  <h2 style="color:red;">この映画をリストから消しますか？</h2>
+  <p>タイトル: <strong><%= data.title %></strong></p>
+  <p>監督: <%= data.director %></p>
+  
+  <form action="/movies/delete/<%= id %>" method="GET">
+    <button type="submit">はい、削除します</button>
+  </form>
+  <br>
+  <a href="/movies">いいえ、やめます</a>
+</body>
+</html>

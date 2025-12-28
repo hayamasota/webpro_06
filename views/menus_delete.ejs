@@ -1,0 +1,12 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><title>削除確認</title></head>
+<body>
+  <h2>以下のメニューを削除しますか？</h2>
+  <p>商品名: <strong><%= data.name %></strong></p>
+  <form action="/menus/delete/<%= id %>" method="GET">
+    <input type="submit" value="はい、削除します" style="color:red;">
+  </form>
+  <br><a href="/menus">キャンセル</a>
+</body>
+</html>

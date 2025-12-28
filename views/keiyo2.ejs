@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>京葉線の駅</title>
+  <style>
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h2>京葉線の駅の詳細</h2>
+  <table>
+    <tr>
+      <th>ID</th><th>駅コード</th><th>駅名</th><th>操作</th>
+    </tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><%= row.code %></td>
+          <td><a href="/keiyo2/<%= number %>"><%= row.name %></a></td>
+          <td>
+            <a href="/keiyo2/edit/<%= number %>">編集</a> | 
+            <a href="/keiyo2/confirm_delete/<%= number %>">削除</a>
+          </td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br>
+  <a href="/keiyo2/create">新しい駅を追加</a>
+</body>
+</html>

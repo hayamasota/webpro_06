@@ -1,0 +1,20 @@
+ <!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.title %></title>
+</head>
+<body>
+  <h2><%= data.title %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>タイトル</td><td><%= data.title %></td></tr>
+    <tr><td>著者</td><td><%= data.author %></td></tr>
+    <tr><td>貸出状態</td><td><%= data.status %></td></tr>
+    <tr><td>ページ数</td><td><%= data.pages %></td></tr>
+  </table>
+  <br>
+  <a href="/books/edit/<%= id %>">編集する</a> | 
+  <a href="/books">本の一覧に戻る</a>
+</body>
+</html>

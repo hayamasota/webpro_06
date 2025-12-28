@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head><meta charset="utf-8"><title>映画リスト</title></head>
+<body>
+  <h2>お気に入り映画一覧</h2>
+  <table border="1">
+    <tr><th>ID</th><th>タイトル</th><th>監督</th><th>操作</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><a href="/movies/<%= number %>"><%= row.title %></a></td>
+          <td><%= row.director %></td>
+          <td>
+            <a href="/movies/edit/<%= number %>">編集</a> | 
+            <a href="/movies/confirm_delete/<%= number %>">削除</a>
+          </td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <br><a href="/movies/create">新しい映画を登録</a>
+</body>
+</html>

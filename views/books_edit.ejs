@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.title %></title>
+</head>
+<body>
+  <h2><%= data.title %>の編集</h2>
+  <form action="/books/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>タイトル</td><td><input type="text" name="title" value="<%= data.title %>"></td></tr>
+      <tr><td>著者</td><td><input type="text" name="author" value="<%= data.author %>"></td></tr>
+      <tr><td>貸出状態</td><td><input type="text" name="status" value="<%= data.status %>"></td></tr>
+      <tr><td>ページ数</td><td><input type="text" name="pages" value="<%= data.pages %>"></td></tr>
+    </table>
+    <input type="submit" value="更新">
+  </form>
+  <a href="/books/">本の一覧に戻る</a>
+</body>
+</html>
